@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 图书信息 -->
+<books>
+    <book sn="1">
+        <name>时间简史</name>
+        <author>霍金</author>
+        <price>999</price>
+    </book>
+    <book sn="2">
+        <name>生煎简史</name>
+        <author>你爹</author>
+        <price>99999</price>
+    </book>
+</books>
