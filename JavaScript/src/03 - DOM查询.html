@@ -3,21 +3,85 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Untitled Document</title>
-    <link rel="stylesheet" type="text/css" href="03%20-%20DOM查询.css" />
+    <link rel="stylesheet" type="text/css" href="css/03%20-%20DOM查询.css" />
     <script type="text/javascript">
+        //为指定元素绑定单击响应函数
+        function myClick(idStr, fun) {
+            var btn = document.getElementById(idStr);
+            btn.onclick = fun;
+        }
 
-        //查找#bj节点
-        //查找所有li节点
-        //查找name=gender的所有节点
-        //查找#city下所有li节点
-        //返回#city的所有子节点
-        //返回#phone的第一个子节点
-        //返回#bj的父节点
-        //返回#android的前一个兄弟节点
-        //读取#username的value属性值
-        //设置#username的value属性值
-        //返回#bj的文本值
+        window.onload = function () {
+            //查找#bj节点
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                var bj = document.getElementById("bj");
+                alert(bj.innerHTML);
+            };
+            //查找所有li节点
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function () {
+                var list = document.getElementsByTagName("li");
+                // alert(list.length);
+                for (var i = 0; i < list.length; i++) {
+                    alert(list[i].innerHTML);
+                }
+            };
+            //查找name=gender的所有节点
+            var btn03 = document.getElementById("btn03");
+            btn03.onclick = function () {
+                var inputs = document.getElementsByName("gender");
+                for (var i = 0; i < inputs.length; i++) {
+                    alert(inputs[i].value);
+                }
+            };
+            //查找#city下所有li节点
+            var btn04 = document.getElementById("btn04");
+            btn04.onclick = function () {
+                var city = document.getElementById("city");
+                var list = city.getElementsByTagName("li");
+                for (var i = 0; i < list.length; i++) {
+                    alert(list[i].innerHTML);
+                }
+            };
+            //返回#city的所有子节点
+            var btn05 = document.getElementById("btn05");
+            btn05.onclick = function () {
+                var city = document.getElementById("city");
+                var cns1 = city.childNodes;
+                var cns2 = city.children;
+                for (var i = 0; i < cns1.length; i++) {
+                    alert(cns1[i]);
+                }
+                for (var i = 0; i < cns2.length; i++) {
+                    alert(cns2[i]);
+                }
+            };
+            //返回#phone的第一个子节点
+            var btn06 = document.getElementById("phone");
+            btn06.onclick = function () {
+                var phone = document.getElementById("phone");
+                var first = phone.firstChild;
 
+            };
+            //返回#bj的父节点
+            myClick("btn07", function () {
+               var bj = document.getElementById("bj");
+               var pn = bj.parentNode;
+               alert(pn.innerHTML);
+            });
+            //返回#android的前一个兄弟节点
+            myClick("btn08", function () {
+                var android = document.getElementById("android");
+                var ps = android.previousElementSibling;
+                alert(ps.innerText);
+            });
+            //读取#username的value属性值
+            myClick("btn09", function () {
+                var un = document.getElementById("username");
+                alert(un.value);
+            });
+        };
     </script>
 </head>
 <body>
